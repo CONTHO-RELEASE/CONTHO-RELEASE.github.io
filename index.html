@@ -130,7 +130,7 @@
   <div class="container is-max-desktop">
     <div class="hero-body">
       <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/images/teaser.gif"
+        <source src="./static/images/contho_pipeline.png"
                 type="video/mp4">
       </video>
       <h2 class="subtitle has-text-centered">
@@ -211,27 +211,23 @@
             deforming scene using photos/videos captured casually from mobile phones.
           </p>
           <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
-          </p>
-          <p>
-            We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
-            photos/videos into deformable NeRF
-            models that allow for photorealistic renderings of the subject from arbitrary
-            viewpoints, which we dub <i>"nerfies"</i>. We evaluate our method by collecting data
-            using a
-            rig with two mobile phones that take time-synchronized photos, yielding train/validation
-            images of the same pose at different viewpoints. We show that our method faithfully
-            reconstructs non-rigidly deforming scenes and reproduces unseen views with high
-            fidelity.
+            Human-object contact serves as a strong cue to understand how humans physically interact with objects. 
+            Nevertheless, it is not widely explored to utilize human-object
+            contact information for the joint reconstruction of 3D
+            human and object from a single image. In this work,
+            we present a novel joint 3D human-object reconstruction
+            method (CONTHO) that effectively exploits contact information between humans and objects. 
+            There are two core designs in our system: 1) 3D-guided contact estimation and 2)
+            contact-based 3D human and object refinement. First, for
+            accurate human-object contact estimation, CONTHO initially reconstructs 3D humans and objects and utilizes them
+            as explicit 3D guidance for contact estimation. Second, to
+            refine the initial reconstructions of 3D human and object,
+            we propose a novel contact-based refinement Transformer
+            that effectively aggregates human features and object features based on the estimated human-object contact. 
+            The proposed contact-based refinement prevents the learning of
+            erroneous correlation between human and object, which enables accurate 3D reconstruction. 
+            As a result, our CONTHO achieves state-of-the-art performance in both human-object contact estimation and joint reconstruction of 3D human and object. 
+            The code is publicly available.
           </p>
         </div>
       </div>
